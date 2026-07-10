@@ -14,5 +14,5 @@ every 12–24 hours).
 ## Subscribe in Google Calendar
 
 1. Go to Google Calendar → Settings → **Add calendar** → **From URL**
-2. Paste URL
+2. Paste URL (https://raw.githubusercontent.com/wagers/mgw-calendar/main/calendar_name.ics)
 3. Click **Add calendar**
