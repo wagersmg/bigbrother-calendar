@@ -6,150 +6,156 @@ from bs4 import BeautifulSoup
 from icalendar import Calendar, Event
 
 
-URL = "https://aceofcupsbar.com/"
-
-CALENDAR_NAME = "Ace of Cups"
 OUTPUT_FILE = "aceofcups.ics"
 
+BASE_URL = "https://aceofcupsbar.com/"
 LOCATION = "Ace of Cups, 2619 N High St, Columbus, OH"
 
-LOOKBACK_DAYS = 1
+MONTHS = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4,
+    "May": 5, "Jun": 6, "Jul": 7, "Aug": 8,
+    "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+}
 
 
-def clean_text(text):
+def clean(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def parse_event_date(date_text):
-    """
-    Attempts to parse common event date formats.
-    Ace of Cups pages commonly use formats like:
-    July 10, 2026
-    Fri Jul 10
-    """
-    formats = [
-        "%B %d, %Y",
-        "%b %d, %Y",
-        "%A %B %d, %Y",
-        "%a %b %d, %Y",
-    ]
+def parse_date(text):
+    match = re.search(
+        r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})",
+        text
+    )
 
-    for fmt in formats:
-        try:
-            return datetime.strptime(date_text.strip(), fmt)
-        except ValueError:
-            pass
+    if not match:
+        return None
 
-    return None
+    month = MONTHS[match.group(1)]
+    day = int(match.group(2))
+
+    now = datetime.now()
+
+    year = now.year
+    date = datetime(year, month, day)
+
+    if date < now - timedelta(days=30):
+        date = datetime(year + 1, month, day)
+
+    return date.replace(hour=19)
 
 
 cal = Calendar()
 cal.add("prodid", "-//Ace of Cups Calendar//")
 cal.add("version", "2.0")
-cal.add("X-WR-CALNAME", CALENDAR_NAME)
+cal.add("X-WR-CALNAME", "Ace of Cups")
 
 
-response = requests.get(
-    URL,
-    headers={
-        "User-Agent": "Mozilla/5.0"
-    },
-    timeout=30,
-)
+events = set()
 
-response.raise_for_status()
+for page in range(1, 10):
 
-soup = BeautifulSoup(response.text, "html.parser")
+    if page == 1:
+        url = BASE_URL
+    else:
+        url = f"{BASE_URL}?list1page={page}"
 
-
-events_found = 0
-
-# WordPress event pages usually expose events in article blocks.
-# This intentionally searches broadly so minor site redesigns don't break it.
-for item in soup.find_all(["article", "div", "section"]):
-
-    text = clean_text(item.get_text(" ", strip=True))
-
-    if "Ace of Cups" in text:
-        continue
-
-    if len(text) < 10:
-        continue
-
-
-    # Find possible dates
-    date_match = re.search(
-        r"(January|February|March|April|May|June|July|August|September|October|November|December)"
-        r"\s+\d{1,2},\s+\d{4}",
-        text,
+    r = requests.get(
+        url,
+        headers={"User-Agent": "Mozilla/5.0"},
+        timeout=30
     )
 
-    if not date_match:
-        continue
+    soup = BeautifulSoup(r.text, "html.parser")
 
+    text = soup.get_text("\n")
 
-    start = parse_event_date(date_match.group(0))
+    lines = [
+        clean(x)
+        for x in text.splitlines()
+        if clean(x)
+    ]
 
-    if not start:
-        continue
+    for i, line in enumerate(lines):
 
+        if not re.search(
+            r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2}",
+            line
+        ):
+            continue
 
-    title = text.split(date_match.group(0))[0].strip()
+        event_date = parse_date(line)
 
-    if not title:
-        continue
+        if not event_date:
+            continue
 
+        if i + 1 >= len(lines):
+            continue
 
-    event = Event()
+        title = lines[i + 1]
 
-    uid = re.sub(
-        r"[^a-zA-Z0-9]",
-        "",
-        title.lower()
-    )
+        if (
+            title in events
+            or "Ace of Cups" in title
+            or title.startswith("at Ace")
+        ):
+            continue
 
-    event.add(
-        "uid",
-        f"aceofcups-{uid}@bigbrother-calendar"
-    )
+        events.add(title)
 
-    event.add(
-        "dtstamp",
-        datetime.now(timezone.utc)
-    )
+        description_parts = []
 
-    event.add(
-        "summary",
-        f"Ace of Cups - {title}"
-    )
+        for extra in lines[i+2:i+8]:
+            if (
+                "$" in extra
+                or "All Ages" in extra
+                or "21+" in extra
+                or "18+" in extra
+            ):
+                description_parts.append(extra)
 
-    event.add(
-        "dtstart",
-        start
-    )
+        event = Event()
 
-    event.add(
-        "dtend",
-        start + timedelta(hours=3)
-    )
+        event.add(
+            "uid",
+            f"aceofcups-{len(events)}@calendar"
+        )
 
-    event.add(
-        "location",
-        LOCATION
-    )
+        event.add(
+            "dtstamp",
+            datetime.now(timezone.utc)
+        )
 
-    event.add(
-        "description",
-        text
-    )
+        event.add(
+            "summary",
+            f"Ace of Cups - {title}"
+        )
 
-    cal.add_component(event)
+        event.add(
+            "dtstart",
+            event_date
+        )
 
-    events_found += 1
+        event.add(
+            "dtend",
+            event_date + timedelta(hours=3)
+        )
+
+        event.add(
+            "location",
+            LOCATION
+        )
+
+        event.add(
+            "description",
+            " | ".join(description_parts)
+        )
+
+        cal.add_component(event)
 
 
 with open(OUTPUT_FILE, "wb") as f:
     f.write(cal.to_ical())
 
 
-print(f"Ace of Cups calendar updated: {events_found} events")
+print(f"Ace of Cups calendar updated with {len(events)} events.")
