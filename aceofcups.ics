@@ -3,20 +3,20 @@ VERSION:2.0
 PRODID:-//Ace of Cups Calendar//
 X-WR-CALNAME:Ace of Cups
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Morgue: Goth\, Latex\, Leather Night at Ace of Cups
+SUMMARY:
 DTSTART:20260710T190000
 DTEND:20260710T220000
-DTSTAMP:20260710T163053Z
+DTSTAMP:20260710T163910Z
 UID:aceofcups-0@calendar
 DESCRIPTION:Artists: \nGenre: Goth\nAge: 21+\nPrice: $10.00\nTickets: http
  s://events.ticketleap.com/tickets/our-morgue-party/morgue-dance-party
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Being as an Ocean at Ace of Cups
+SUMMARY:Being as an Ocean\, Vanna\, lowheaven
 DTSTART:20260711T190000
 DTEND:20260711T220000
-DTSTAMP:20260710T163053Z
+DTSTAMP:20260710T163910Z
 UID:aceofcups-1@calendar
 DESCRIPTION:Artists: Being as an Ocean\, Vanna\, lowheaven\nGenre: Metalco
  re\nAge: All Ages\nPrice: $22.00\nTickets: https://seetickets.us/event/bei
@@ -24,689 +24,552 @@ DESCRIPTION:Artists: Being as an Ocean\, Vanna\, lowheaven\nGenre: Metalco
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Schism: A Dark Alt Dance Party
-DTSTART:20260711T190000
-DTEND:20260711T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-2@calendar
-DESCRIPTION:Artists: \nGenre: Goth\nAge: 21+\nPrice: $5.00\nTickets: https
- ://seetickets.us/event/schism-a-dark-alt-dance-party/696958
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Novulent at Ace of Cups
+SUMMARY:Novulent
 DTSTART:20260712T190000
 DTEND:20260712T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-3@calendar
+DTSTAMP:20260710T163910Z
+UID:aceofcups-2@calendar
 DESCRIPTION:Artists: Novulent\nGenre: Alternative\nAge: All Ages\nPrice: $
  20.00\nTickets: https://seetickets.us/event/novulent-at-ace-of-cups/686495
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Cola at Ace of Cups
+SUMMARY:Cola
 DTSTART:20260714T190000
 DTEND:20260714T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-4@calendar
+DTSTAMP:20260710T163910Z
+UID:aceofcups-3@calendar
 DESCRIPTION:Artists: Cola\nGenre: Alternative\nAge: All Ages\nPrice: $17.0
  0\nTickets: https://seetickets.us/event/cola-at-ace-of-cups/684950
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Bricknasty at Ace of Cups
+SUMMARY:Bricknasty
 DTSTART:20260715T190000
 DTEND:20260715T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-5@calendar
+DTSTAMP:20260710T163910Z
+UID:aceofcups-4@calendar
 DESCRIPTION:Artists: Bricknasty\nGenre: Alternative\nAge: All Ages\nPrice:
   $20.00\nTickets: https://seetickets.us/event/bricknasty-at-ace-of-cups/69
  2091
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - FELICITY at Ace of Cups
+SUMMARY:FELICITY
 DTSTART:20260716T190000
 DTEND:20260716T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-6@calendar
+DTSTAMP:20260710T163910Z
+UID:aceofcups-5@calendar
 DESCRIPTION:Artists: FELICITY\nGenre: Metal\nAge: All Ages\nPrice: $15.00\
  nTickets: https://seetickets.us/event/felicity-at-ace-of-cups/687895
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Keyse at Ace of Cups
+SUMMARY:Keyse
 DTSTART:20260717T190000
 DTEND:20260717T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-7@calendar
+DTSTAMP:20260710T163910Z
+UID:aceofcups-6@calendar
 DESCRIPTION:Artists: Keyse\nGenre: Alternative\nAge: All Ages\nPrice: $15.
  00\nTickets: https://seetickets.us/event/keyse-at-ace-of-cups/695707
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Sad Boyz 7.17.26
-DTSTART:20260717T190000
-DTEND:20260717T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-8@calendar
-DESCRIPTION:Artists: \nGenre: DJ/Dance\nAge: 21+\nPrice: $5.00-$10.00\nTic
- kets: https://seetickets.us/event/sad-boyz-71726/698229
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Punk Rock Pawn Shop 7.18.26
-DTSTART:20260718T190000
-DTEND:20260718T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-9@calendar
-DESCRIPTION:Artists: \nGenre: Shopping/Market\nAge: All Ages\nPrice: $0.00
- \nTickets: https://seetickets.us/event/punk-rock-pawn-shop-71826/698124
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Unsanctioned Pro: Here We Go Again at Ace of Cups
-DTSTART:20260718T190000
-DTEND:20260718T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-10@calendar
-DESCRIPTION:Artists: \nGenre: Theatre\nAge: All Ages\nPrice: $30.00\nTicke
- ts: https://seetickets.us/event/unsanctioned-pro-here-we-go-again-at-ace-o
- f-cups/698178
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Blu & Exile at Ace of Cups
+SUMMARY:Blu & Exile
 DTSTART:20260719T190000
 DTEND:20260719T220000
-DTSTAMP:20260710T163053Z
-UID:aceofcups-11@calendar
+DTSTAMP:20260710T163910Z
+UID:aceofcups-7@calendar
 DESCRIPTION:Artists: Blu & Exile\nGenre: Hip Hop/Rap\nAge: All Ages\nPrice
  : $20.00\nTickets: https://seetickets.us/event/blu-and-exile-at-ace-of-cup
  s/690773
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - 10 Years at Ace of Cups
+SUMMARY:10 Years
 DTSTART:20260721T190000
 DTEND:20260721T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-12@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-8@calendar
 DESCRIPTION:Artists: 10 Years\nGenre: Rock\nAge: All Ages\nPrice: $22.00\n
  Tickets: https://seetickets.us/event/10-years-at-ace-of-cups/693450
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - School of Rock All‐Stars at Ace of Cups
+SUMMARY:School of Rock All‐Stars
 DTSTART:20260724T190000
 DTEND:20260724T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-13@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-9@calendar
 DESCRIPTION:Artists: School of Rock All‐Stars\nGenre: Rock\nAge: All Age
  s\nPrice: $15.00-$50.00\nTickets: https://seetickets.us/event/school-of-ro
  ck-allstars-at-ace-of-cups/691612
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Just Dance: Recession Pop Dance Night at Ace of Cups
-DTSTART:20260724T190000
-DTEND:20260724T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-14@calendar
-DESCRIPTION:Artists: \nGenre: DJ/Dance\nAge: 18+\nPrice: $10.00-$30.00\nTi
- ckets: https://seetickets.us/event/just-dance-recession-pop-dance-night-at
- -ace-of-cups/697429
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Mascara Cowboys at Ace of Cups
+SUMMARY:Mascara Cowboys
 DTSTART:20260725T190000
 DTEND:20260725T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-15@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-10@calendar
 DESCRIPTION:Artists: Mascara Cowboys\nGenre: Indie\nAge: All Ages\nPrice: 
  $10.00\nTickets: https://seetickets.us/event/mascara-cowboys-at-ace-of-cup
  s/696975
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Until I Wake at Ace of Cups
+SUMMARY:Until I Wake\, Deadlands\, PINKNOISE
 DTSTART:20260726T190000
 DTEND:20260726T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-16@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-11@calendar
 DESCRIPTION:Artists: Until I Wake\, Deadlands\, PINKNOISE\nGenre: Metal\nA
  ge: All Ages\nPrice: $20.00\nTickets: https://seetickets.us/event/until-i-
  wake-at-ace-of-cups/689922
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - GlitterMania at Ace of Cups
-DTSTART:20260730T190000
-DTEND:20260730T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-17@calendar
-DESCRIPTION:Artists: \nGenre: Metalcore\nAge: 18+\nPrice: $10.00\nTickets:
-  https://seetickets.us/event/glittermania-at-ace-of-cups/698460
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Dance Floor Confessions: Madonna & Pop Icons Dance P
- arty
-DTSTART:20260731T190000
-DTEND:20260731T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-18@calendar
-DESCRIPTION:Artists: \nGenre: DJ/Dance\nAge: 18+\nPrice: $10.00-$30.00\nTi
- ckets: https://seetickets.us/event/dance-floor-confessions-madonna-and-pop
- -icons-dance-party/698367
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Blockout Bash at Ace of Cups
-DTSTART:20260801T190000
-DTEND:20260801T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-19@calendar
-DESCRIPTION:Artists: \nGenre: Rock\nAge: All Ages\nPrice: $30.00\nTickets:
-  https://www.eventbrite.com/e/blockout-bash-2026-tickets-1991873547400?aff
- =oddtdtcreator
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Heathen at Ace of Cups
+SUMMARY:Heathen
 DTSTART:20260802T190000
 DTEND:20260802T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-20@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-12@calendar
 DESCRIPTION:Artists: Heathen\nGenre: Metal\nAge: All Ages\nPrice: $20.00\n
  Tickets: https://seetickets.us/event/heathen-at-ace-of-cups/695284
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Arranged in April at Ace of Cups
+SUMMARY:Arranged in April
 DTSTART:20260804T190000
 DTEND:20260804T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-21@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-13@calendar
 DESCRIPTION:Artists: Arranged in April\nGenre: Emo\nAge: All Ages\nPrice: 
  $15.00\nTickets: https://seetickets.us/event/arranged-in-april-at-ace-of-c
  ups/693989
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Music Columbus: The Unheard at Ace of Cups
-DTSTART:20260806T190000
-DTEND:20260806T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-22@calendar
-DESCRIPTION:Artists: \nGenre: Alternative\nPrice: $0.00\nTickets: https://
- seetickets.us/event/music-columbus-the-unheard-at-ace-of-cups/694039
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - American Vanity at Ace of Cups
+SUMMARY:American Vanity
 DTSTART:20260807T190000
 DTEND:20260807T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-23@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-14@calendar
 DESCRIPTION:Artists: American Vanity\nGenre: Rock\nAge: All Ages\nPrice: $
  17.00-$40.00\nTickets: https://seetickets.us/event/american-vanity-at-ace-
  of-cups/686798
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Villagerrr at Ace of Cups
-DTSTART:20260808T190000
-DTEND:20260808T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-24@calendar
-DESCRIPTION:Artists: \nGenre: Indie\nAge: All Ages\nPrice: $15.00\nTickets
- : https://seetickets.us/event/villagerrr-at-ace-of-cups/696231
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Of Virtue and Savage Hands at Ace of Cups
+SUMMARY:Of Virtue\, Savage Hands\, Kingdom Collapse\, Sorry X
 DTSTART:20260809T190000
 DTEND:20260809T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-25@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-15@calendar
 DESCRIPTION:Artists: Of Virtue\, Savage Hands\, Kingdom Collapse\, Sorry X
  \nGenre: Metalcore\nAge: All Ages\nPrice: $20.00\nTickets: https://seetick
  ets.us/event/of-virtue-and-savage-hands-at-ace-of-cups/691303
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Kill Bill: The Rapper at Ace of Cups
+SUMMARY:Kill Bill: The Rapper\, Ashtin Larold
 DTSTART:20260813T190000
 DTEND:20260813T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-26@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-16@calendar
 DESCRIPTION:Artists: Kill Bill: The Rapper\, Ashtin Larold\nGenre: Hip Hop
  /Rap\nAge: All Ages\nPrice: $23.00-$63.00\nTickets: https://seetickets.us/
  event/kill-bill-the-rapper-at-ace-of-cups/689597
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Silver Cave: "Kindness is An Art" Release at Ace of 
- Cup
+SUMMARY:Silver Cave
 DTSTART:20260814T190000
 DTEND:20260814T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-27@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-17@calendar
 DESCRIPTION:Artists: Silver Cave\nGenre: Rock\nAge: All Ages\nPrice: $12.0
  0\nTickets: https://seetickets.us/event/silver-cave-kindness-is-an-art-rel
  ease-at-ace-of-cup/695031
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - *SOLD OUT* Joyce Manor at Ace of Cups
+SUMMARY:Joyce Manor
 DTSTART:20260816T190000
 DTEND:20260816T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-28@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-18@calendar
 DESCRIPTION:Artists: Joyce Manor\nGenre: Post Punk\nAge: All Ages\nPrice: 
  $39.50\nTickets: https://seetickets.us/event/sold-out-joyce-manor-at-ace-o
  f-cups/689994
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - wilt at Ace of Cups
+SUMMARY:wilt
 DTSTART:20260818T190000
 DTEND:20260818T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-29@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-19@calendar
 DESCRIPTION:Artists: wilt\nGenre: Alternative\nAge: All Ages\nPrice: $20.0
  0\nTickets: https://seetickets.us/event/wilt-at-ace-of-cups/695008
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - *SOLD OUT* comehelpglo at Ace of Cups
+SUMMARY:comehelpglo
 DTSTART:20260820T190000
 DTEND:20260820T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-30@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-20@calendar
 DESCRIPTION:Artists: comehelpglo\nGenre: Hip Hop/Rap\nAge: All Ages\nPrice
  : $18.00\nTickets: https://seetickets.us/event/sold-out-comehelpglo-at-ace
  -of-cups/693404
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - REZN at Ace of Cups
+SUMMARY:REZN\, Lume
 DTSTART:20260822T190000
 DTEND:20260822T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-31@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-21@calendar
 DESCRIPTION:Artists: REZN\, Lume\nGenre: Doom/Stoner Metal\nAge: All Ages\
  nPrice: $20.00\nTickets: https://seetickets.us/event/rezn-at-ace-of-cups/6
  90510
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Ritual Breaks at Ace of Cups
+SUMMARY:Ritual Breaks
 DTSTART:20260825T190000
 DTEND:20260825T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-32@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-22@calendar
 DESCRIPTION:Artists: Ritual Breaks\nGenre: Rock\nAge: All Ages\nPrice: $25
  .00\nTickets: https://seetickets.us/event/ritual-breaks-at-ace-of-cups/695
  869
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Atta Boy at Ace of Cups
+SUMMARY:Atta Boy
 DTSTART:20260827T190000
 DTEND:20260827T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-33@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-23@calendar
 DESCRIPTION:Artists: Atta Boy\nGenre: Indie\nAge: All Ages\nPrice: $25.00\
  nTickets: https://seetickets.us/event/atta-boy-at-ace-of-cups/696293
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Nunslaughter at Ace of Cups
-DTSTART:20260828T190000
-DTEND:20260828T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-34@calendar
-DESCRIPTION:Artists: \nGenre: Metal\nPrice: $25.00\nTickets: https://www.e
- ventbrite.com/e/1991468340415?aff=oddtdtcreator
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Futurebirds at Ace of Cups
+SUMMARY:Futurebirds
 DTSTART:20260829T190000
 DTEND:20260829T220000
-DTSTAMP:20260710T163054Z
-UID:aceofcups-35@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-24@calendar
 DESCRIPTION:Artists: Futurebirds\nGenre: Indie\nAge: All Ages\nPrice: $22.
  00\nTickets: https://seetickets.us/event/futurebirds-at-ace-of-cups/696232
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Faetooth at Ace of Cups
+SUMMARY:Faetooth\, Latter\, Bosses
 DTSTART:20260830T190000
 DTEND:20260830T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-36@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-25@calendar
 DESCRIPTION:Artists: Faetooth\, Latter\, Bosses\nGenre: Alternative\nAge: 
  All Ages\nPrice: $20.00\nTickets: https://seetickets.us/event/faetooth-at-
  ace-of-cups/687967
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Ben Quad and Macseal at Ace of Cups
+SUMMARY:Ben Quad\, Macseal
 DTSTART:20260904T190000
 DTEND:20260904T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-37@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-26@calendar
 DESCRIPTION:Artists: Ben Quad\, Macseal\nGenre: Emo\nAge: All Ages\nPrice:
   $25.00\nTickets: https://seetickets.us/event/ben-quad-and-macseal-at-ace-
  of-cups/696451
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Sex Mex at Ace of Cups
+SUMMARY:Sex Mex
 DTSTART:20260907T190000
 DTEND:20260907T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-38@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-27@calendar
 DESCRIPTION:Artists: Sex Mex\nGenre: Punk\nAge: All Ages\nPrice: $15.00\nT
  ickets: https://seetickets.us/event/sex-mex-at-ace-of-cups/696644
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Monolord at Ace of Cups
-DTSTART:20260908T190000
-DTEND:20260908T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-39@calendar
-DESCRIPTION:Artists: \nGenre: Doom/Stoner Metal\nPrice: $30.00\nTickets: h
- ttps://www.eventbrite.com/e/1986079738963?aff=oddtdtcreator
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Dopethrone at Ace of Cups
-DTSTART:20260911T190000
-DTEND:20260911T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-40@calendar
-DESCRIPTION:Artists: \nGenre: Doom/Stoner Metal\nAge: 18+\nPrice: $22.00\n
- Tickets: https://www.eventbrite.com/e/1986841277746?aff=oddtdtcreator
-LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Ace of Cups - Punchline "37 Everywhere" 20th Anniversary at Ace of
-  Cups
+SUMMARY:Punchline
 DTSTART:20260912T190000
 DTEND:20260912T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-41@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-28@calendar
 DESCRIPTION:Artists: Punchline\nGenre: Punk\nAge: All Ages\nPrice: $20.00\
  nTickets: https://seetickets.us/event/punchline-37-everywhere-20th-anniver
  sary-at-ace-of-cups/693482
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Wolves of Glendale at Ace of Cups
+SUMMARY:Wolves of Glendale
 DTSTART:20260916T190000
 DTEND:20260916T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-42@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-29@calendar
 DESCRIPTION:Artists: Wolves of Glendale\nGenre: Alternative\nAge: All Ages
  \nPrice: $25.00\nTickets: https://seetickets.us/event/wolves-of-glendale-a
  t-ace-of-cups/693220
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Rum Jungle at Ace of Cups
+SUMMARY:Rum Jungle
 DTSTART:20260917T190000
 DTEND:20260917T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-43@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-30@calendar
 DESCRIPTION:Artists: Rum Jungle\nGenre: Surfer Rock\nAge: All Ages\nPrice:
   $20.00\nTickets: https://seetickets.us/event/rum-jungle-at-ace-of-cups/69
  0052
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Wargasm at Ace of Cups
+SUMMARY:Wargasm
 DTSTART:20260918T190000
 DTEND:20260918T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-44@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-31@calendar
 DESCRIPTION:Artists: Wargasm\nGenre: Metal\nAge: All Ages\nPrice: $19.50\n
  Tickets: https://seetickets.us/event/wargasm-at-ace-of-cups/694657
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - *Sold Out* This Is Lorelei at Ace of Cups
+SUMMARY:This Is Lorelei
 DTSTART:20260922T190000
 DTEND:20260922T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-45@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-32@calendar
 DESCRIPTION:Artists: This Is Lorelei\nGenre: Indie\nAge: All Ages\nPrice: 
  $20.00\nTickets: https://seetickets.us/event/sold-out-this-is-lorelei-at-a
  ce-of-cups/689677
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Way Dynamic at Ace of Cups
+SUMMARY:Way Dynamic
 DTSTART:20260925T190000
 DTEND:20260925T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-46@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-33@calendar
 DESCRIPTION:Artists: Way Dynamic\nGenre: Indie\nAge: All Ages\nPrice: $20.
  00\nTickets: https://seetickets.us/event/way-dynamic-at-ace-of-cups/692756
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Automatic at Ace of Cups
+SUMMARY:Automatic
 DTSTART:20260929T190000
 DTEND:20260929T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-47@calendar
+DTSTAMP:20260710T163911Z
+UID:aceofcups-34@calendar
 DESCRIPTION:Artists: Automatic\nGenre: Synthwave\nAge: All Ages\nPrice: $2
  4.00\nTickets: https://seetickets.us/event/automatic-at-ace-of-cups/695651
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Hot Flash Heat Wave at Ace of Cups
+SUMMARY:Hot Flash Heat Wave\, Bleary Eyed\, High.
 DTSTART:20261001T190000
 DTEND:20261001T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-48@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-35@calendar
 DESCRIPTION:Artists: Hot Flash Heat Wave\, Bleary Eyed\, High.\nGenre: Alt
  ernative\nAge: All Ages\nPrice: $20.00\nTickets: https://seetickets.us/eve
  nt/hot-flash-heat-wave-at-ace-of-cups/694141
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Pertinence at Ace of Cups
+SUMMARY:Pertinence
 DTSTART:20261002T190000
 DTEND:20261002T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-49@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-36@calendar
 DESCRIPTION:Artists: Pertinence\nGenre: Hip Hop/Rap\nAge: All Ages\nPrice:
   $18.00\nTickets: https://seetickets.us/event/pertinence-at-ace-of-cups/68
  8450
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Revocation at Ace of Cups
+SUMMARY:Revocation
 DTSTART:20261003T190000
 DTEND:20261003T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-50@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-37@calendar
 DESCRIPTION:Artists: Revocation\nGenre: Metal\nAge: All Ages\nPrice: $22.0
  0\nTickets: https://seetickets.us/event/revocation-at-ace-of-cups/693455
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Cryogeyser at Ace of Cups
+SUMMARY:Cryogeyser
 DTSTART:20261004T190000
 DTEND:20261004T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-51@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-38@calendar
 DESCRIPTION:Artists: Cryogeyser\nGenre: Alternative\nPrice: $19.99\nTicket
  s: https://seetickets.us/event/cryogeyser-at-ace-of-cups/696965
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Greywind at Ace of Cups
+SUMMARY:Greywind
 DTSTART:20261006T190000
 DTEND:20261006T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-52@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-39@calendar
 DESCRIPTION:Artists: Greywind\nGenre: Rock\nAge: All Ages\nPrice: $18.00\n
  Tickets: https://seetickets.us/event/greywind-at-ace-of-cups/695208
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Surf Hat at Ace of Cups
+SUMMARY:Surf Hat
 DTSTART:20261007T190000
 DTEND:20261007T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-53@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-40@calendar
 DESCRIPTION:Artists: Surf Hat\nGenre: Blues\nAge: All Ages\nPrice: $18.00\
  nTickets: https://seetickets.us/event/surf-hat-at-ace-of-cups/694209
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Upon Your Dead Body at Ace of Cups
+SUMMARY:Upon Your Dead Body
 DTSTART:20261008T190000
 DTEND:20261008T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-54@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-41@calendar
 DESCRIPTION:Artists: Upon Your Dead Body\nGenre: Metal\nAge: All Ages\nPri
  ce: $18.00\nTickets: https://seetickets.us/event/upon-your-dead-body-at-ac
  e-of-cups/694738
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Wishy: Nature's Pill Tour at Ace of Cups
+SUMMARY:Wishy
 DTSTART:20261009T190000
 DTEND:20261009T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-55@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-42@calendar
 DESCRIPTION:Artists: Wishy\nGenre: Alternative\nAge: All Ages\nPrice: $20.
  00\nTickets: https://seetickets.us/event/wishy-natures-pill-tour-at-ace-of
  -cups/694143
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - LEAP at Ace of Cups
+SUMMARY:LEAP
 DTSTART:20261011T190000
 DTEND:20261011T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-56@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-43@calendar
 DESCRIPTION:Artists: LEAP\nGenre: Indie\nAge: All Ages\nPrice: $20.00\nTic
  kets: https://seetickets.us/event/leap-at-ace-of-cups/691888
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Grace Enger at Ace of Cups - CANCELED
+SUMMARY:Grace Enger
 DTSTART:20261013T190000
 DTEND:20261013T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-57@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-44@calendar
 DESCRIPTION:Artists: Grace Enger\nGenre: Singer/Songwriter\nAge: All Ages\
  nPrice: $25.00-$90.00\nTickets: https://seetickets.us/event/grace-enger-at
  -ace-of-cups-canceled/691793
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Rav at Ace of Cups
+SUMMARY:Rav
 DTSTART:20261015T190000
 DTEND:20261015T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-58@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-45@calendar
 DESCRIPTION:Artists: Rav\nGenre: Hip Hop/Rap\nAge: All Ages\nPrice: $22.00
  -$65.00\nTickets: https://seetickets.us/event/rav-at-ace-of-cups/696969
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - First to Eleven at Ace of Cups
+SUMMARY:First to Eleven
 DTSTART:20261019T190000
 DTEND:20261019T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-59@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-46@calendar
 DESCRIPTION:Artists: First to Eleven\nGenre: Rock\nAge: All Ages\nPrice: $
  20.00-$80.00\nTickets: https://seetickets.us/event/first-to-eleven-at-ace-
  of-cups/697436
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Big D and the Kids Table at Ace of Cups
+SUMMARY:Big D and the Kids Table
 DTSTART:20261021T190000
 DTEND:20261021T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-60@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-47@calendar
 DESCRIPTION:Artists: Big D and the Kids Table\nGenre: Ska\nAge: All Ages\n
  Price: $25.00\nTickets: https://seetickets.us/event/big-d-and-the-kids-tab
  le-at-ace-of-cups/692929
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Julia Cole at Ace of Cups
+SUMMARY:Julia Cole
 DTSTART:20261023T190000
 DTEND:20261023T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-61@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-48@calendar
 DESCRIPTION:Artists: Julia Cole\nGenre: Country\nAge: All Ages\nPrice: $25
  .00\nTickets: https://seetickets.us/event/julia-cole-at-ace-of-cups/685217
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - In Her Own Words and Every Avenue at Ace of Cups
+SUMMARY:In Her Own Words\, Every Avenue
 DTSTART:20261030T190000
 DTEND:20261030T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-62@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-49@calendar
 DESCRIPTION:Artists: In Her Own Words\, Every Avenue\nGenre: Indie\nAge: A
  ll Ages\nPrice: $22.50\nTickets: https://seetickets.us/event/in-her-own-wo
  rds-and-every-avenue-at-ace-of-cups/691458
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - Teen Jesus and the Jean Teasers at Ace of Cups
+SUMMARY:Teen Jesus and the Jean Teasers
 DTSTART:20261101T190000
 DTEND:20261101T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-63@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-50@calendar
 DESCRIPTION:Artists: Teen Jesus and the Jean Teasers\nGenre: Punk\nAge: Al
  l Ages\nPrice: $20.00\nTickets: https://seetickets.us/event/teen-jesus-and
  -the-jean-teasers-at-ace-of-cups/686515
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - A Place to Bury Strangers and  ADULT. at Ace of Cups
+SUMMARY:A Place to Bury Strangers\, ADULT.
 DTSTART:20261118T190000
 DTEND:20261118T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-64@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-51@calendar
 DESCRIPTION:Artists: A Place to Bury Strangers\, ADULT.\nGenre: Electronic
  \nAge: All Ages\nPrice: $25.00\nTickets: https://seetickets.us/event/a-pla
  ce-to-bury-strangers-and-adult-at-ace-of-cups/691885
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - They Are Gutting a Body of Water at Ace of Cups
+SUMMARY:They Are Gutting a Body of Water
 DTSTART:20261122T190000
 DTEND:20261122T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-65@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-52@calendar
 DESCRIPTION:Artists: They Are Gutting a Body of Water\nGenre: Alternative\
  nAge: All Ages\nPrice: $20.00\nTickets: https://seetickets.us/event/they-a
  re-gutting-a-body-of-water-at-ace-of-cups/691562
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Ace of Cups - VALÉ at Ace of Cups
+SUMMARY:VALÉ
 DTSTART:20261209T190000
 DTEND:20261209T220000
-DTSTAMP:20260710T163055Z
-UID:aceofcups-66@calendar
+DTSTAMP:20260710T163912Z
+UID:aceofcups-53@calendar
 DESCRIPTION:Artists: VALÉ\nGenre: Pop\nAge: All Ages\nPrice: $15.00\nTick
  ets: https://seetickets.us/event/vale-at-ace-of-cups/695499
 LOCATION:Ace of Cups\, 2619 N High St\, Columbus\, OH
