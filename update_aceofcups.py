@@ -11,21 +11,27 @@ OUTPUT_FILE = "aceofcups.ics"
 BASE_URL = "https://aceofcupsbar.com/"
 LOCATION = "Ace of Cups, 2619 N High St, Columbus, OH"
 
+
 MONTHS = {
-    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4,
-    "May": 5, "Jun": 6, "Jul": 7, "Aug": 8,
-    "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+    "Jan": 1,
+    "Feb": 2,
+    "Mar": 3,
+    "Apr": 4,
+    "May": 5,
+    "Jun": 6,
+    "Jul": 7,
+    "Aug": 8,
+    "Sep": 9,
+    "Oct": 10,
+    "Nov": 11,
+    "Dec": 12,
 }
-
-
-def clean(text):
-    return re.sub(r"\s+", " ", text).strip()
 
 
 def parse_date(text):
     match = re.search(
-        r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})",
-        text
+        r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d+)",
+        text,
     )
 
     if not match:
@@ -37,12 +43,20 @@ def parse_date(text):
     now = datetime.now()
 
     year = now.year
-    date = datetime(year, month, day)
 
-    if date < now - timedelta(days=30):
-        date = datetime(year + 1, month, day)
+    event_date = datetime(
+        year,
+        month,
+        day,
+        19,
+        0,
+    )
 
-    return date.replace(hour=19)
+    # Handle events that have already passed this year
+    if event_date < now - timedelta(days=30):
+        event_date = event_date.replace(year=year + 1)
+
+    return event_date
 
 
 cal = Calendar()
@@ -51,7 +65,9 @@ cal.add("version", "2.0")
 cal.add("X-WR-CALNAME", "Ace of Cups")
 
 
-events = set()
+events_added = 0
+seen = set()
+
 
 for page in range(1, 10):
 
@@ -60,65 +76,121 @@ for page in range(1, 10):
     else:
         url = f"{BASE_URL}?list1page={page}"
 
-    r = requests.get(
+    response = requests.get(
         url,
         headers={"User-Agent": "Mozilla/5.0"},
-        timeout=30
+        timeout=30,
     )
 
-    soup = BeautifulSoup(r.text, "html.parser")
+    response.raise_for_status()
 
-    text = soup.get_text("\n")
+    soup = BeautifulSoup(response.text, "html.parser")
 
-    lines = [
-        clean(x)
-        for x in text.splitlines()
-        if clean(x)
-    ]
 
-    for i, line in enumerate(lines):
+    cards = soup.select(
+        ".seetickets-list-event-container"
+    )
 
-        if not re.search(
-            r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2}",
-            line
-        ):
+    if not cards:
+        break
+
+
+    for card in cards:
+
+        title_element = card.select_one(
+            ".event-title a"
+        )
+
+        date_element = card.select_one(
+            ".event-date"
+        )
+
+        if not title_element or not date_element:
             continue
 
-        event_date = parse_date(line)
 
-        if not event_date:
+        title = title_element.get_text(
+            " ",
+            strip=True
+        )
+
+        if title in seen:
             continue
 
-        if i + 1 >= len(lines):
+        seen.add(title)
+
+
+        start = parse_date(
+            date_element.get_text(
+                " ",
+                strip=True
+            )
+        )
+
+        if not start:
             continue
 
-        title = lines[i + 1]
 
-        if (
-            title in events
-            or "Ace of Cups" in title
-            or title.startswith("at Ace")
-        ):
-            continue
+        ticket_url = title_element.get(
+            "href"
+        )
 
-        events.add(title)
 
-        description_parts = []
+        headliners = card.select_one(
+            ".headliners"
+        )
 
-        for extra in lines[i+2:i+8]:
-            if (
-                "$" in extra
-                or "All Ages" in extra
-                or "21+" in extra
-                or "18+" in extra
-            ):
-                description_parts.append(extra)
+        ages = card.select_one(
+            ".ages"
+        )
+
+        price = card.select_one(
+            ".price"
+        )
+
+        genre = card.select_one(
+            ".genre"
+        )
+
+
+        description = []
+
+        if headliners:
+            description.append(
+                "Artists: " +
+                headliners.get_text(strip=True)
+            )
+
+        if genre:
+            description.append(
+                "Genre: " +
+                genre.get_text(strip=True)
+            )
+
+        if ages:
+            description.append(
+                "Age: " +
+                ages.get_text(strip=True)
+            )
+
+        if price:
+            description.append(
+                "Price: " +
+                price.get_text(strip=True)
+            )
+
+        if ticket_url:
+            description.append(
+                "Tickets: " +
+                ticket_url
+            )
+
 
         event = Event()
 
         event.add(
             "uid",
-            f"aceofcups-{len(events)}@calendar"
+            f"aceofcups-{events_added}@calendar"
         )
 
         event.add(
@@ -128,17 +200,17 @@ for page in range(1, 10):
 
         event.add(
             "summary",
-            f"Ace of Cups - {title}"
+            "Ace of Cups - " + title
         )
 
         event.add(
             "dtstart",
-            event_date
+            start
         )
 
         event.add(
             "dtend",
-            event_date + timedelta(hours=3)
+            start + timedelta(hours=3)
         )
 
         event.add(
@@ -148,14 +220,18 @@ for page in range(1, 10):
 
         event.add(
             "description",
-            " | ".join(description_parts)
+            "\n".join(description)
         )
 
         cal.add_component(event)
+
+        events_added += 1
 
 
 with open(OUTPUT_FILE, "wb") as f:
     f.write(cal.to_ical())
 
 
-print(f"Ace of Cups calendar updated with {len(events)} events.")
+print(
+    f"Ace of Cups calendar updated with {events_added} events."
+)
