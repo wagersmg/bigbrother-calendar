@@ -108,10 +108,24 @@ for page in range(1, 10):
         if not title_element or not date_element:
             continue
 
+        headliner_element = card.select_one(".headliners")
 
-        title = title_element.get_text(
-            " ",
-            strip=True
+        if headliner_element:
+            title = headliner_element.get_text(
+                " ",
+                strip=True
+            )
+        else:
+            title = title_element.get_text(
+                " ",
+                strip=True
+            )
+
+        title = re.sub(
+            r"\s+at Ace of Cups$",
+            "",
+            title,
+            flags=re.IGNORECASE
         )
 
         if title in seen:
@@ -198,9 +212,16 @@ for page in range(1, 10):
             datetime.now(timezone.utc)
         )
 
+        title = re.sub(
+            r"\s+at Ace of Cups$",
+            "",
+            title,
+            flags=re.IGNORECASE
+        )
+
         event.add(
             "summary",
-            "Ace of Cups - " + title
+            title
         )
 
         event.add(
