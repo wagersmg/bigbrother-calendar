@@ -1,4 +1,4 @@
-name: Update Big Brother Calendar
+name: Update Calendars
 
 on:
   workflow_dispatch:
