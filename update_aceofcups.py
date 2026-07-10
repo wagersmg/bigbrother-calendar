@@ -1,4 +1,5 @@
 import re
+import hashlib
 from datetime import datetime, timedelta, timezone
 
 import requests
@@ -10,7 +11,6 @@ OUTPUT_FILE = "aceofcups.ics"
 
 BASE_URL = "https://aceofcupsbar.com/"
 LOCATION = "Ace of Cups, 2619 N High St, Columbus, OH"
-
 
 MONTHS = {
     "Jan": 1,
@@ -28,6 +28,10 @@ MONTHS = {
 }
 
 
+def clean(text):
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def parse_date(text):
     match = re.search(
         r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d+)",
@@ -42,19 +46,20 @@ def parse_date(text):
 
     now = datetime.now()
 
-    year = now.year
-
     event_date = datetime(
-        year,
+        now.year,
         month,
         day,
         19,
         0,
     )
 
-    # Handle events that have already passed this year
+    # If the event appears to be in the past,
+    # assume it is next year's event
     if event_date < now - timedelta(days=30):
-        event_date = event_date.replace(year=year + 1)
+        event_date = event_date.replace(
+            year=now.year + 1
+        )
 
     return event_date
 
@@ -78,14 +83,18 @@ for page in range(1, 10):
 
     response = requests.get(
         url,
-        headers={"User-Agent": "Mozilla/5.0"},
+        headers={
+            "User-Agent": "Mozilla/5.0"
+        },
         timeout=30,
     )
 
     response.raise_for_status()
 
-    soup = BeautifulSoup(response.text, "html.parser")
-
+    soup = BeautifulSoup(
+        response.text,
+        "html.parser"
+    )
 
     cards = soup.select(
         ".seetickets-list-event-container"
@@ -108,21 +117,38 @@ for page in range(1, 10):
         if not title_element or not date_element:
             continue
 
-       title_element = card.select_one(".event-title a")
-        headliner_element = card.select_one(".headliners")
 
-        headliner = (
-            headliner_element.get_text(" ", strip=True)
-            if headliner_element
-            else ""
+        ticket_url = title_element.get(
+            "href",
+            ""
         )
+
+
+        if ticket_url in seen:
+            continue
+
+        seen.add(ticket_url)
+
+
+        headliner_element = card.select_one(
+            ".headliners"
+        )
+
+        headliner = ""
+
+        if headliner_element:
+            headliner = clean(
+                headliner_element.get_text()
+            )
+
 
         if headliner:
             title = headliner
-        elif title_element:
-            title = title_element.get_text(" ", strip=True)
         else:
-            title = "Ace of Cups Event"
+            title = clean(
+                title_element.get_text()
+            )
+
 
         title = re.sub(
             r"\s+at Ace of Cups$",
@@ -131,30 +157,20 @@ for page in range(1, 10):
             flags=re.IGNORECASE
         )
 
-        if title in seen:
-            continue
-
-        seen.add(title)
-
 
         start = parse_date(
-            date_element.get_text(
-                " ",
-                strip=True
-            )
+            date_element.get_text()
         )
 
         if not start:
             continue
 
 
-        ticket_url = title_element.get(
-            "href"
-        )
+        description = []
 
 
-        headliners = card.select_one(
-            ".headliners"
+        genre = card.select_one(
+            ".genre"
         )
 
         ages = card.select_one(
@@ -165,63 +181,48 @@ for page in range(1, 10):
             ".price"
         )
 
-        genre = card.select_one(
-            ".genre"
-        )
-
-
-        description = []
-
-        if headliners:
-            description.append(
-                "Artists: " +
-                headliners.get_text(strip=True)
-            )
 
         if genre:
             description.append(
-                "Genre: " +
-                genre.get_text(strip=True)
+                f"Genre: {clean(genre.get_text())}"
             )
 
         if ages:
             description.append(
-                "Age: " +
-                ages.get_text(strip=True)
+                f"Age: {clean(ages.get_text())}"
             )
 
         if price:
             description.append(
-                "Price: " +
-                price.get_text(strip=True)
+                f"Price: {clean(price.get_text())}"
             )
 
         if ticket_url:
             description.append(
-                "Tickets: " +
-                ticket_url
+                f"Tickets: {ticket_url}"
             )
+
+
+        uid_source = (
+            ticket_url
+            or title + str(start)
+        )
+
+        uid = hashlib.md5(
+            uid_source.encode()
+        ).hexdigest()
 
 
         event = Event()
 
         event.add(
             "uid",
-            event.add(
-            "uid",
-            f"aceofcups-{hash(title + str(start))}@calendar"
+            f"aceofcups-{uid}@calendar"
         )
 
         event.add(
             "dtstamp",
             datetime.now(timezone.utc)
-        )
-
-        title = re.sub(
-            r"\s+at Ace of Cups$",
-            "",
-            title,
-            flags=re.IGNORECASE
         )
 
         event.add(
@@ -249,13 +250,19 @@ for page in range(1, 10):
             "\n".join(description)
         )
 
+
         cal.add_component(event)
 
         events_added += 1
 
 
-with open(OUTPUT_FILE, "wb") as f:
-    f.write(cal.to_ical())
+with open(
+    OUTPUT_FILE,
+    "wb"
+) as f:
+    f.write(
+        cal.to_ical()
+    )
 
 
 print(
