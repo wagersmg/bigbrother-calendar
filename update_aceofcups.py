@@ -108,18 +108,21 @@ for page in range(1, 10):
         if not title_element or not date_element:
             continue
 
+       title_element = card.select_one(".event-title a")
         headliner_element = card.select_one(".headliners")
 
-        if headliner_element:
-            title = headliner_element.get_text(
-                " ",
-                strip=True
-            )
+        headliner = (
+            headliner_element.get_text(" ", strip=True)
+            if headliner_element
+            else ""
+        )
+
+        if headliner:
+            title = headliner
+        elif title_element:
+            title = title_element.get_text(" ", strip=True)
         else:
-            title = title_element.get_text(
-                " ",
-                strip=True
-            )
+            title = "Ace of Cups Event"
 
         title = re.sub(
             r"\s+at Ace of Cups$",
@@ -204,7 +207,9 @@ for page in range(1, 10):
 
         event.add(
             "uid",
-            f"aceofcups-{events_added}@calendar"
+            event.add(
+            "uid",
+            f"aceofcups-{hash(title + str(start))}@calendar"
         )
 
         event.add(
