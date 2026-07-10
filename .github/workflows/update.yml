@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate calendar
         run: |
-          python update_calendar.py
+          python update_bigbrother.py
           python update_aceofcups.py
 
       - name: Commit updated calendar
