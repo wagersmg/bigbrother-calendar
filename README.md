@@ -11,13 +11,5 @@ every 12–24 hours).
 ## Subscribe in Google Calendar
 
 1. Go to Google Calendar → Settings → **Add calendar** → **From URL**
-2. Paste:
-   `https://raw.githubusercontent.com/<your-username>/bigbrother-calendar/main/bigbrother.ics`
+2. Paste URL
 3. Click **Add calendar**
-
-## Local run
-
-```
-pip install -r requirements.txt
-python update_calendar.py
-```
