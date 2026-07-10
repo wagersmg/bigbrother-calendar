@@ -7,8 +7,8 @@ from icalendar import Calendar, Event
 SHOW_ID = 1453  # TVMaze Big Brother (US)
 EPISODE_LENGTH = timedelta(hours=1)
 
-# Set to False if you only want current/upcoming episodes instead of full history
-INCLUDE_PAST_EPISODES = True
+# Only keep episodes from the last N days onward (plus all future episodes)
+LOOKBACK_DAYS = 30
 
 url = f"https://api.tvmaze.com/shows/{SHOW_ID}/episodes"
 episodes = requests.get(url, timeout=30).json()
@@ -18,6 +18,7 @@ cal.add("prodid", "-//Big Brother Calendar//")
 cal.add("version", "2.0")
 
 now_utc = datetime.now(timezone.utc)
+cutoff = now_utc - timedelta(days=LOOKBACK_DAYS)
 
 def strip_html(text: str) -> str:
     """TVMaze summaries come as HTML - strip tags for a plain-text description."""
@@ -29,7 +30,7 @@ for ep in episodes:
 
     start = datetime.fromisoformat(ep["airstamp"].replace("Z", "+00:00"))
 
-    if not INCLUDE_PAST_EPISODES and start < now_utc:
+    if start < cutoff:
         continue
 
     event = Event()
