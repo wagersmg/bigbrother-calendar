@@ -5,13 +5,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
-from icalendar import (
-    Calendar,
-    Event,
-    Timezone,
-    TimezoneStandard,
-    TimezoneDaylight,
-)
+from icalendar import Calendar, Event
 
 
 OUTPUT_FILE = "aceofcups.ics"
@@ -78,32 +72,6 @@ cal.add("prodid", "-//Ace of Cups Calendar//")
 cal.add("version", "2.0")
 cal.add("X-WR-TIMEZONE", "America/New_York")
 cal.add("X-WR-CALNAME", "Ace of Cups")
-
-tz = Timezone()
-tz.add("tzid", "America/New_York")
-
-dst = TimezoneDaylight()
-...
-dst.add("rrule", {
-    "FREQ": "YEARLY",
-    "BYMONTH": 3,
-    "BYDAY": "2SU",
-})
-
-std = TimezoneStandard()
-std.add("tzname", "EST")
-std.add("dtstart", datetime(1970, 11, 1, 2, 0))
-std.add("tzoffsetfrom", timedelta(hours=-4))
-std.add("tzoffsetto", timedelta(hours=-5))
-std.add("rrule", {
-    "FREQ": "YEARLY",
-    "BYMONTH": 11,
-    "BYDAY": "1SU",
-})
-
-tz.add_component(dst)
-tz.add_component(std)
-cal.add_component(tz)
 
 
 events_added = 0
