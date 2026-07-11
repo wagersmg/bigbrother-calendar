@@ -1,6 +1,7 @@
 import re
 import hashlib
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
@@ -11,6 +12,7 @@ OUTPUT_FILE = "aceofcups.ics"
 
 BASE_URL = "https://aceofcupsbar.com/"
 LOCATION = "Ace of Cups, 2619 N High St, Columbus, OH"
+TIMEZONE = ZoneInfo("America/New_York")
 
 MONTHS = {
     "Jan": 1,
@@ -44,7 +46,7 @@ def parse_date(text):
     month = MONTHS[match.group(1)]
     day = int(match.group(2))
 
-    now = datetime.now()
+    now = datetime.now(TIMEZONE)
 
     event_date = datetime(
         now.year,
@@ -52,6 +54,7 @@ def parse_date(text):
         day,
         19,
         0,
+        tzinfo=TIMEZONE,
     )
 
     # If the event appears to be in the past,
@@ -67,6 +70,7 @@ def parse_date(text):
 cal = Calendar()
 cal.add("prodid", "-//Ace of Cups Calendar//")
 cal.add("version", "2.0")
+cal.add("X-WR-TIMEZONE", "America/New_York")
 cal.add("X-WR-CALNAME", "Ace of Cups")
 
 
