@@ -14,19 +14,23 @@ BASE_URL = "https://aceofcupsbar.com/"
 LOCATION = "Ace of Cups, 2619 N High St, Columbus, OH"
 TIMEZONE = ZoneInfo("America/New_York")
 
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;"
+        "q=0.9,image/webp,*/*;q=0.8"
+    ),
+    "Accept-Language": "en-US,en;q=0.9",
+    "Referer": "https://aceofcupsbar.com/",
+}
+
 MONTHS = {
-    "Jan": 1,
-    "Feb": 2,
-    "Mar": 3,
-    "Apr": 4,
-    "May": 5,
-    "Jun": 6,
-    "Jul": 7,
-    "Aug": 8,
-    "Sep": 9,
-    "Oct": 10,
-    "Nov": 11,
-    "Dec": 12,
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12,
 }
 
 
@@ -48,21 +52,10 @@ def parse_date(text):
 
     now = datetime.now(TIMEZONE)
 
-    event_date = datetime(
-        now.year,
-        month,
-        day,
-        19,
-        0,
-        tzinfo=TIMEZONE,
-    )
+    event_date = datetime(now.year, month, day, 19, 0, tzinfo=TIMEZONE)
 
-    # If the event appears to be in the past,
-    # assume it is next year's event
     if event_date < now - timedelta(days=30):
-        event_date = event_date.replace(
-            year=now.year + 1
-        )
+        event_date = event_date.replace(year=now.year + 1)
 
     return event_date
 
@@ -73,10 +66,11 @@ cal.add("version", "2.0")
 cal.add("X-WR-TIMEZONE", "America/New_York")
 cal.add("X-WR-CALNAME", "Ace of Cups")
 
-
 events_added = 0
 seen = set()
 
+session = requests.Session()
+session.headers.update(HEADERS)
 
 for page in range(1, 10):
 
@@ -85,190 +79,87 @@ for page in range(1, 10):
     else:
         url = f"{BASE_URL}?list1page={page}"
 
-    response = requests.get(
-        url,
-        headers={
-            "User-Agent": "Mozilla/5.0"
-        },
-        timeout=30,
-    )
+    response = session.get(url, timeout=30)
+
+    if response.status_code == 403:
+        print(f"WARNING: got 403 fetching page {page}, stopping pagination early.")
+        break
 
     response.raise_for_status()
 
-    soup = BeautifulSoup(
-        response.text,
-        "html.parser"
-    )
+    soup = BeautifulSoup(response.text, "html.parser")
 
-    cards = soup.select(
-        ".seetickets-list-event-container"
-    )
+    cards = soup.select(".seetickets-list-event-container")
 
     if not cards:
         break
 
-
     for card in cards:
 
-        title_element = card.select_one(
-            ".event-title a"
-        )
-
-        date_element = card.select_one(
-            ".event-date"
-        )
+        title_element = card.select_one(".event-title a")
+        date_element = card.select_one(".event-date")
 
         if not title_element or not date_element:
             continue
 
-
-        ticket_url = title_element.get(
-            "href",
-            ""
-        )
-
+        ticket_url = title_element.get("href", "")
 
         if ticket_url in seen:
             continue
 
         seen.add(ticket_url)
 
-
-        headliner_element = card.select_one(
-            ".headliners"
-        )
-
+        headliner_element = card.select_one(".headliners")
         headliner = ""
 
         if headliner_element:
-            headliner = clean(
-                headliner_element.get_text()
-            )
-
+            headliner = clean(headliner_element.get_text())
 
         if headliner:
             title = headliner
         else:
-            title = clean(
-                title_element.get_text()
-            )
+            title = clean(title_element.get_text())
 
+        title = re.sub(r"\s+at Ace of Cups$", "", title, flags=re.IGNORECASE)
 
-        title = re.sub(
-            r"\s+at Ace of Cups$",
-            "",
-            title,
-            flags=re.IGNORECASE
-        )
-
-
-        start = parse_date(
-            date_element.get_text()
-        )
+        start = parse_date(date_element.get_text())
 
         if not start:
             continue
 
-
         description = []
 
-
-        genre = card.select_one(
-            ".genre"
-        )
-
-        ages = card.select_one(
-            ".ages"
-        )
-
-        price = card.select_one(
-            ".price"
-        )
-
+        genre = card.select_one(".genre")
+        ages = card.select_one(".ages")
+        price = card.select_one(".price")
 
         if genre:
-            description.append(
-                f"Genre: {clean(genre.get_text())}"
-            )
-
+            description.append(f"Genre: {clean(genre.get_text())}")
         if ages:
-            description.append(
-                f"Age: {clean(ages.get_text())}"
-            )
-
+            description.append(f"Age: {clean(ages.get_text())}")
         if price:
-            description.append(
-                f"Price: {clean(price.get_text())}"
-            )
-
+            description.append(f"Price: {clean(price.get_text())}")
         if ticket_url:
-            description.append(
-                f"Tickets: {ticket_url}"
-            )
+            description.append(f"Tickets: {ticket_url}")
 
-
-        uid_source = (
-            ticket_url
-            or title + str(start)
-        )
-
-        uid = hashlib.md5(
-            uid_source.encode()
-        ).hexdigest()
-
+        uid_source = ticket_url or title + str(start)
+        uid = hashlib.md5(uid_source.encode()).hexdigest()
 
         event = Event()
 
-        event.add(
-            "uid",
-            f"aceofcups-{uid}@calendar"
-        )
-
-        event.add(
-            "dtstamp",
-            datetime.now(timezone.utc)
-        )
-
-        event.add(
-            "summary",
-            title
-        )
-
-        event.add(
-            "dtstart",
-            start
-        )
-
-        event.add(
-            "dtend",
-            start + timedelta(hours=3)
-        )
-
-        event.add(
-            "location",
-            LOCATION
-        )
-
-        event.add(
-            "description",
-            "\n".join(description)
-        )
-
+        event.add("uid", f"aceofcups-{uid}@calendar")
+        event.add("dtstamp", datetime.now(timezone.utc))
+        event.add("summary", title)
+        event.add("dtstart", start)
+        event.add("dtend", start + timedelta(hours=3))
+        event.add("location", LOCATION)
+        event.add("description", "\n".join(description))
 
         cal.add_component(event)
 
         events_added += 1
 
+with open(OUTPUT_FILE, "wb") as f:
+    f.write(cal.to_ical())
 
-with open(
-    OUTPUT_FILE,
-    "wb"
-) as f:
-    f.write(
-        cal.to_ical()
-    )
-
-
-print(
-    f"Ace of Cups calendar updated with {events_added} events."
-)
+print(f"Ace of Cups calendar updated with {events_added} events.")
